@@ -1,6 +1,14 @@
 input {
-  height: 4rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  outline: solid 1px #ccc;
+  border: 0;
+  width: 10rem;
   &.small {
+    outline: solid 1px #aaa;
+    border-radius: 4px;
     height: 2rem;
+    margin-left: 0.25rem;
   }
 }

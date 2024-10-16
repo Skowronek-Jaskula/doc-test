@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
 export type config = {
-  size?: string;
   type?: 'checkbox' | 'radio';
   label: string;
 };
@@ -13,9 +12,25 @@ export type config = {
   styleUrl: './checkbox.component.scss',
 })
 export class CheckboxComponent {
+  /**
+   * @ignore
+   */
+  @Input() configType: 'checkbox' | 'radio' = 'checkbox';
+
+  /**
+   * @ignore
+   */
+  @Input() configLabel: string = 'Label';
+
   @Input() config: config = {
-    size: 'large',
-    type: 'checkbox',
-    label: 'insert label',
+    type: this.configType,
+    label: this.configLabel,
   };
+
+  /**
+   * @ignore
+   */
+  construtor() {
+    this.configType = 'radio';
+  }
 }

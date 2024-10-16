@@ -233,7 +233,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-682a28f097d8f49f8f7258ec8534f22ad275053455077aa7f8021d2b63ced30e20c41e6d87559da76cd29d2bb76bd10abb11a86e9a3e87a303da990dbfab3676",
+            "id": "component-CheckboxComponent-3220b298d070452763f2693eb47971c172ec6f802d91929cf737cd6f59d5710190a972fa4a0a7b65e2f423b0ffb7791a7c2994e90fbae469ea65b5e7804b718b",
             "file": "src/app/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -251,10 +251,10 @@
             "inputsClass": [
                 {
                     "name": "config",
-                    "defaultValue": "{\r\n    size: 'large',\r\n    type: 'checkbox',\r\n    label: 'insert label',\r\n  }",
+                    "defaultValue": "{\r\n    type: this.configType,\r\n    label: this.configLabel,\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 25,
                     "type": "config",
                     "decorators": []
                 }
@@ -271,13 +271,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nexport type config = {\r\n  size?: string;\r\n  type?: 'checkbox' | 'radio';\r\n  label: string;\r\n};\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrl: './checkbox.component.scss',\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() config: config = {\r\n    size: 'large',\r\n    type: 'checkbox',\r\n    label: 'insert label',\r\n  };\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nexport type config = {\r\n  type?: 'checkbox' | 'radio';\r\n  label: string;\r\n};\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrl: './checkbox.component.scss',\r\n})\r\nexport class CheckboxComponent {\r\n  /**\r\n   * @ignore\r\n   */\r\n  @Input() configType: 'checkbox' | 'radio' = 'checkbox';\r\n\r\n  /**\r\n   * @ignore\r\n   */\r\n  @Input() configLabel: string = 'Label';\r\n\r\n  @Input() config: config = {\r\n    type: this.configType,\r\n    label: this.configLabel,\r\n  };\r\n\r\n  /**\r\n   * @ignore\r\n   */\r\n  construtor() {\r\n    this.configType = 'radio';\r\n  }\r\n}\r\n",
             "styleUrl": "./checkbox.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<label\r\n  >{{ config.label }}\r\n\r\n  <input [class]=\"config.size\" [type]=\"config.type\" />\r\n</label>\r\n\r\n<p>But there is more in the file</p>\r\n<p>But there is more in the file</p>\r\n<p>But there is more in the file</p>\r\n<p>But there is more in the file</p>\r\n"
+            "templateData": "<label\r\n  >{{ config.label }}\r\n\r\n  <input [type]=\"config.type\" name=\"asd\" />\r\n</label>\r\n<label\r\n  >{{ config.label }}\r\n\r\n  <input [type]=\"config.type\" name=\"asd\" />\r\n</label>\r\n<label\r\n  >{{ config.label }}\r\n\r\n  <input [type]=\"config.type\" name=\"asd\" />\r\n</label>\r\n\r\n<p>But there is more in the file</p>\r\n<p>But there is more in the file</p>\r\n<p>But there is more in the file</p>\r\n<p>But there is more in the file</p>\r\n"
         },
         {
             "name": "HeaderComponent",
