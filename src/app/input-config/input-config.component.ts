@@ -1,17 +1,17 @@
 import { Component, Input } from '@angular/core';
 
 export type config = {
-  type?: 'checkbox' | 'radio';
+  type?: 'checkbox' | 'radio' | 'text' | 'date';
   label: string;
 };
 @Component({
-  selector: 'app-checkbox',
+  selector: 'app-input-config',
   standalone: true,
   imports: [],
-  templateUrl: './checkbox.component.html',
-  styleUrl: './checkbox.component.scss',
+  templateUrl: './input-config.component.html',
+  styleUrl: './input-config.component.scss',
 })
-export class CheckboxComponent {
+export class InputConfigComponent {
   /**
    * @ignore
    */
@@ -20,7 +20,7 @@ export class CheckboxComponent {
   /**
    * @ignore
    */
-  @Input() configLabel: string = 'Label';
+  @Input() configLabel: string = '';
 
   @Input() config: config = {
     type: this.configType,

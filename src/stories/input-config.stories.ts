@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { CheckboxComponent } from '../app/checkbox/checkbox.component';
+import { InputConfigComponent } from '../app/input-config/input-config.component';
 
-const meta: Meta<CheckboxComponent> = {
-  title: 'Angular/Checkbox',
-  component: CheckboxComponent,
+const meta: Meta<InputConfigComponent> = {
+  title: 'BNOTK related/Configurable @Input()',
+  component: InputConfigComponent,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -13,6 +13,8 @@ const meta: Meta<CheckboxComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<CheckboxComponent>;
+type Story = StoryObj<InputConfigComponent>;
 
-export const Checkbox: Story = {};
+export const InputConfigStory: Story = {
+  name: 'Input - Configurable @Input()',
+};

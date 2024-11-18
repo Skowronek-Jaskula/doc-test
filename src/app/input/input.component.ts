@@ -9,6 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class InputComponent {
   @Input() size?: 'large' | 'small';
-  @Input() type?: 'text' | 'date';
+  @Input() type?: 'checkbox' | 'radio' | 'text' | 'date';
   @Input() label?: string;
 }
