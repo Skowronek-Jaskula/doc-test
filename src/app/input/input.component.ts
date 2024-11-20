@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.scss',
+  styleUrl: '../styles.scss',
 })
 export class InputComponent {
   @Input() size?: 'large' | 'small';

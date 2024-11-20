@@ -1,30 +1,40 @@
 import { Component, Input } from '@angular/core';
 
+export type Type = 'checkbox' | 'radio' | 'text' | 'date';
+export type Size = 'large' | 'small';
+
 export type config = {
-  type?: 'checkbox' | 'radio' | 'text' | 'date';
+  type: Type;
   label: string;
+  size: Size;
 };
 @Component({
   selector: 'app-input-config',
   standalone: true,
   imports: [],
   templateUrl: './input-config.component.html',
-  styleUrl: './input-config.component.scss',
+  styleUrl: '../styles.scss',
 })
 export class InputConfigComponent {
   /**
    * @ignore
    */
-  @Input() configType: 'checkbox' | 'radio' = 'checkbox';
+  @Input() configType: Type = 'checkbox';
 
   /**
    * @ignore
    */
   @Input() configLabel: string = '';
 
+  /**
+   * @ignore
+   */
+  @Input() configSize: Size = 'large';
+
   @Input() config: config = {
     type: this.configType,
     label: this.configLabel,
+    size: this.configSize,
   };
 
   /**
